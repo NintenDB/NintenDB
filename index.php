@@ -1,19 +1,40 @@
-<head>
-    <title>Hi</title>
-</head>
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>NintenDB</title>
+        <style>
+        </style>
+        <link href="+/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
 
-<?php
+<div id="index">
+    <div id="title">
+        <h1>NintenDB</h1>
+    </div>
 
-for($i =0; $i < 10; $i++){
-    echo $i." bottles of beer on the wall<br>";
-}
+    <div id="nav">
+        <ul>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
 
-echo "hello php";
-?>
+   
+    
+    <div id="main">
+        <h2>Main</h2>
+    </div>
 
+    <div id="sidebar">
+        <h2>Sidebar</h2>
+    </div>
 
-Are you still here?
+    <div id="footer">
+        <p>© NintenDB</p>
+    </div>
 
-hello there
-
-test 3911 876 876 876
+</body>
+</html>

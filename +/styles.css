@@ -1,0 +1,50 @@
+:root {
+    --mainred: #DC4444;
+}
+
+html, body {margin: 0; padding: 0;}
+div {border: #666 1px solid; margin: 0; padding:0px} 
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 ;
+    padding: 0;
+}
+
+#title {
+    background: var(--mainred);
+    height: 130px;
+}
+
+#nav {
+    font-size: 1.3em;
+    height: 80px;
+}
+#nav ul {
+    margin: 0;
+    padding: 0;
+}
+#nav li {
+    display: inline;
+    padding: 0 0.5em;
+    margin: 0;
+    text-decoration:none;
+}
+
+#main {
+    padding: 0;
+    width: 65%;
+    display: inline-flex;
+}
+#sidebar {
+    padding: 0;
+    width: 24%; display: inline-flex;
+}
+#main, #sidebar {
+    min-height: 300px;
+}
+
+#footer {
+    background: var(--mainred);
+    height: 100px;
+    text-align: center;
+    }
