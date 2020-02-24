@@ -15,7 +15,7 @@
 
     <div id="nav-site">
         <ul>
-            <li><a href="#">Browse</a></li>
+            <li><a href="#">Brownies</a></li>
             <li><a href="#">Sell</a></li>
         </ul>
     </div>
@@ -23,7 +23,6 @@
         <ul>
             <li><a href="#">Signup</a></li>
             <li><a href="#">Login</a></li>
-            <li><a href="#">About</a></li>
         </ul>
     </div>
 
