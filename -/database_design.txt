@@ -15,7 +15,7 @@ Game
 	developer
 	publisher
 	genre
-	multiplayer (true/false)
+	multiplayer (true/false) (or number 1 ~ 4)
 
 Listings
 	id
