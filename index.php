@@ -15,7 +15,7 @@
 
     <div id="nav-site">
         <ul>
-            <li><a href="#">Brownies</a></li>
+            <li><a href="#">Explore</a></li>
             <li><a href="#">Sell</a></li>
         </ul>
     </div>
