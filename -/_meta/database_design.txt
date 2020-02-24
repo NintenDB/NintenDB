@@ -1,0 +1,25 @@
+Users
+	id
+	email
+	name
+
+Consoles
+	id
+	name
+
+Game
+	id
+	name
+	console
+	year
+	developer
+	publisher
+	genre
+	multiplayer (true/false)
+
+Listings
+	id
+	type (game/console)
+	name
+	description
+	(? have two separate kinds of listings, for games and consoles? so we can specify attributes)
