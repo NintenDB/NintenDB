@@ -39,6 +39,6 @@
     <div id="footer">
         <p>© NintenDB</p>
     </div>
-
+</div>
 </body>
 </html>
