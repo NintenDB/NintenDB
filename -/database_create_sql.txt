@@ -1,16 +1,7 @@
-CREATE TABLE `nintendb`.`users` 
+CREATE TABLE users
 (
-    `id` INT NOT NULL AUTO_INCREMENT ,
-    `email` VARCHAR(320) NOT NULL UNIQUE ,
-    `name` VARCHAR(128) NOT NULL , 
-    PRIMARY KEY (`id`)
-) ENGINE = InnoDB;
-
-
-CREATE TABLE `nintendb`.`users` 
-(
-    `id` INT NOT NULL AUTO_INCREMENT ,
-    `email` VARCHAR(320) NOT NULL UNIQUE ,
-    `name` VARCHAR(128) NOT NULL , 
-    PRIMARY KEY (`id`)
-) ENGINE = InnoDB;
+	id INT NOT NULL AUTO_INCREMENT,
+	email VARCHAR(320) NOT NULL UNIQUE,
+	name VARCHAR(128) NOT NULL,
+	PRIMARY KEY(id)
+)
