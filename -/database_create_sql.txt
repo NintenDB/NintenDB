@@ -4,4 +4,54 @@ CREATE TABLE users
 	email VARCHAR(320) NOT NULL UNIQUE,
 	name VARCHAR(128) NOT NULL,
 	PRIMARY KEY(id)
-)
+);
+
+CREATE TABLE consoles
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(64),
+	generation INT,
+	year INT,
+	players INT,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE `games` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` varchar(128),
+  `franchise` varchar(128),
+  `console` varchar(128),
+  `genre` varchar(128),
+  `players` int(11),
+  `developer` varchar(128),
+  `publisher` varchar(128),
+  `year` int(11),
+  PRIMARY KEY(id)
+);
+
+INSERT INTO games (name,franchise,console,genre,players,developer,publisher,year)
+VALUES ("Super Mario Bros.", "Super Mario", "NES", "Platformer", 2, "Nintendo", "Nintendo", 1985);
+
+INSERT INTO consoles (name, generation, year, players)
+VALUES ("NES", 3, 1983, 2);
+
+INSERT INTO consoles (name, generation, year, players)
+VALUES ("SNES", 4, 1990, 2);
+
+
+# for loading everything except id
+
+LOAD DATA LOCAL INFILE 'C:\\xampp\\tmp\\bla.csv' INTO TABLE games
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(name, franchise, console, genre, players, developer, publisher, year);
+
+
+
+
+# for importing from the vgsales.csv dump https://gist.github.com/zhonglism/f146a9423e2c975de8d03c26451f841e
+
+LOAD DATA LOCAL INFILE 'C:\\xampp\\tmp\\top.csv' INTO TABLE games
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES
+(name, console, year, genre, publisher);
