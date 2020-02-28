@@ -25,9 +25,17 @@ try {
 	throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$stmt = $pdo->query('SELECT name FROM games');
+$stmt = $pdo->query('SELECT * FROM games');
+
+echo "<pre>\n";
 
 while ($row = $stmt->fetch()){
-	echo $row['name']."<br>\n";
+	// echo $row['name']."<br>\n";
+	
+	print_r($row);
+	
+	// echo "<br><br>\n";
 }
+
+echo "</pre>\n";
 ?>
