@@ -1,6 +1,7 @@
 :root {
     --mainred: #DC4444;
     --mainblack: #1A1A1A;
+    --lightgray: #ccc;
 }
 
 /* Page setup */
@@ -20,7 +21,6 @@ div {border: #666 0px solid; margin: 0; padding:0px}
     /* Two Col Layout*/
     @media all and (min-width: 600px) {
         .aside {flex: 1.4 0 0;}
-        #nav {max-width: 290px;}
         #main    {flex: 3 0 0;}
         #sidebar {flex-basis: 100%;}
     }
@@ -28,8 +28,37 @@ div {border: #666 0px solid; margin: 0; padding:0px}
     /* Three Col Layout*/
     /* This size should be set higher for final version eg. 1600px*/
     @media all and (min-width: 1300px) {
-        #sidebar {flex-basis: 0;}
+        #main    {flex: 5 0 0;}
+        #sidebar {flex-basis: 0%;}
     }
+
+/* Section Size Adjusting */
+
+    /* Tiny One Col Layout */
+    @media all and (min-width: 400px) {
+        #title {
+            height: 3em;
+            padding-top: 0.6em;
+        }
+        #nav-user {padding-top: 0.5em;}
+    }
+
+    /* Two Col Layout*/
+    @media all and (min-width: 600px) {
+        #title {
+            height: 100px;
+            padding-top: 1em;
+        }
+        #nav {max-width: 290px; min-width: 260px;}
+        #nav-user {padding-top: 0.5em;}
+
+    }
+
+    /* Three Col Layout*/
+    /* This size should be set higher for final version eg. 1600px*/
+    @media all and (min-width: 1300px) {
+    }
+
 
 /* General Elements */
 
@@ -53,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 #nav {
     font-size: 1.3em;
     background: var(--mainblack);
+    padding-bottom: 3em;
 }
 
 #nav ul {
@@ -100,22 +130,52 @@ h1, h2, h3, h4, h5, h6 {
     
     
 #main {
-    padding: 0;
+    padding: 1em;
 }
     #listings {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-content: flex-start;
     }
+        #listings h3 {
+            background: #ccc;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: block;}
         .item {
-            width: 15%;
-            min-width: 150px;
+            width: 10%;
+            min-width: 220px;
+            background: var(--lightgray);
+            margin: 1em;
+            padding: 0.5em 1em 1.3em;
+            max-width: 300px;
+            border-radius: 10px;
         }
+            .item h4 {
+                text-align: center;
+                margin: 0.3em 0 0.7em;}
+            .item img {
+                    border: 1px solid #333;
+                    width: 200px;
+                    height: 140px;
+                    display: block;
+                    margin: 0 auto;
+            }
+            .item ul {margin:0; padding:0;}
+            .item ul li {
+                display: inline;
+            }
 
-
+#sidebar {
+    padding: 1em;
+    background: var(--lightgray);}
 
 
 #footer {
     background: var(--mainred);
     text-align: center;
-    height: 130px;
+    height: 180px;
+    padding-top: 2em;
     }

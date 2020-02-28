@@ -49,7 +49,7 @@
 
 </p>
         
-        <!-- <div id="listings">
+        <div id="listings">
             <h3>Listings</h3>
             <div class="item">
                 <h4>Game</h4>
@@ -98,7 +98,7 @@
                     <li>Info 3</li>
                 </ul>
             </div>
-        </div> -->
+        </div>
 
     </div>
 
