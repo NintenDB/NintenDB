@@ -3,16 +3,15 @@
     --mainblack: #1A1A1A;
 }
 
-html, body {
-    margin: 0; padding: 0;
-    font-family: Helvetica, "Helvetica Neue", "Helvetica Neue LT", "Helvetica Now Text", "Segoe UI", sans, sans-serif;
-}
+html, body {margin: 0; padding: 0; font-family: Helvetica, sans-serif;}
 div {border: #666 1px solid; margin: 0; padding:0px} 
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0 ;
     padding: 0;
 }
+
+#index {display: flex; flex-wrap: wrap;}
 
 #title {
     background: var(--mainred);
@@ -28,26 +27,27 @@ h1, h2, h3, h4, h5, h6 {
 /* NAVIGATION */
 #nav {
     font-size: 1.3em;
-    height: 80px;
+    height: 100%;
+    width: 34%;
+    max-width: 260px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--mainblack);
 }
 #nav ul {
     margin: 0;
     padding: 0;
 }
 #nav li {
-    display: inline;
-    padding: 0 0.5em;
-    margin: 0;
+    margin: 0.6em 0;
     text-decoration: none;
 }
     #nav-site ul {
-        background: var(--mainblack);
-        height: 3em;
-        padding-top: 0.8em;
+        margin: 0;
     }
     #nav-site li {
         list-style: none;
-        display: inline;
         padding: 0 1em;
     }
     #nav-site a {
@@ -79,18 +79,18 @@ h1, h2, h3, h4, h5, h6 {
         }
 
 
+#title {width: 100%; display: block; }
 #main {
     padding: 0;
-    width: 65%;
-    /*display: inline-flex;*/ /* Andy: disabled inline-flex because it was inherited by all the content too */
-    float:left;
+    min-width: 65%;
+    display: flex;
+    margin: 0 0 0 auto;
 }
 #sidebar {
     padding: 0;
-    width: 24%;
-    /*display: inline-flex;*/
-    float:left;
-
+    width: 24%; 
+    display: inline-flex;
+    display: none;
 }
 #main, #sidebar {
     min-height: 300px;
@@ -100,14 +100,5 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--mainred);
     height: 100px;
     text-align: center;
-    clear:both;
+    width: 100%;
     }
-
-th, td {
-    padding: 4px 8px;
-}
-
-th {
-    text-align: left;
-    border-bottom: 1px solid grey;
-}
