@@ -20,6 +20,7 @@ div {border: #666 0px solid; margin: 0; padding:0px}
     /* Two Col Layout*/
     @media all and (min-width: 600px) {
         .aside {flex: 1.4 0 0;}
+        #nav {max-width: 290px;}
         #main    {flex: 3 0 0;}
         #sidebar {flex-basis: 100%;}
     }
@@ -52,7 +53,6 @@ h1, h2, h3, h4, h5, h6 {
 #nav {
     font-size: 1.3em;
     background: var(--mainblack);
-    max-width: 290px;
 }
 
 #nav ul {
