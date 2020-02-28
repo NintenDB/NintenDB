@@ -4,7 +4,6 @@
 	}
 	th {
     text-align: left;
-    padding: 6px 4px 6px 0px;
     border-bottom: 1px solid grey;
 	}
 </style>
