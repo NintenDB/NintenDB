@@ -1,50 +1,60 @@
 <?php
+$pageTitle = "Search Games";
+require('../../header.inc');
+require('db_connect.php');
 
-$charset = "utf8mb4";
-$db = "nintendb";
+?>
 
-// $host = "localhost";
-// $user = "root";
-// $pass = "";
+<h2>Search by name</h2>
 
-$host = "mysql.nintendb.xyz";
-$user = "nintendb";
-$pass = "Mindustry11";
+    <br><br>
+<form method="get">
+    <label for="name">Name</label> <br>
+    <input name="name" type="text"> <br>
 
-$options = [
-	\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-	\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-	\PDO::ATTR_EMULATE_PREPARES => false
-];
+    <input name="submit" type="submit">
+</form>
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-try {
-	$pdo = new \PDO($dsn, $user, $pass, $options);
-}catch (\PDOException $e){
-	throw new \PDOException($e->getMessage(), (int)$e->getCode());
+<?php // Search Results
+
+if (isset($_GET['q'])) {
+    $namequery = $_GET['q'];
+
+    $namequery = '%' . $namequery . '%';
+
+    echo "Searching for " . $namequery . "<br>\n";
+
+    $stmt = $pdo->prepare('SELECT * FROM games WHERE name LIKE :namequery');
+    $stmt->execute(['namequery' => $namequery]);
+
+
+    echo '<table cellspacing="0">';
+    $firstRow = true;
+
+    while ($row = $stmt->fetch()) {
+        echo "<tr>";
+        // todo nicer way to do this?
+        if ($firstRow) {
+            echo '<tr class="firstRow">';
+            foreach (array_keys($row) as $column) {
+                echo "<th>$column</th>";
+            }
+            $firstRow = false;
+        } else {
+            foreach ($row as $item) {
+                echo "<td>$item</td>";
+            }
+        }
+        echo "</tr>";
+
+    }
+
+
+    echo "</table>";
 }
+?>
 
-if (!isset($_GET['q'])){ die('no search. Please add ?q=bla to the end of url.'); }
-$namequery = $_GET['q'];
-
-$namequery = '%'.$namequery.'%';
-
-echo "Searching for " . $namequery . "<br>\n";
-
-$stmt = $pdo->prepare('SELECT * FROM games WHERE name LIKE :namequery');
-$stmt->execute(['namequery' => $namequery]);
-
-
-echo "<pre>\n";
-
-while ($row = $stmt->fetch()){
-	// echo $row['name']."<br>\n";
-	
-	print_r($row);
-	
-	// echo "<br><br>\n";
-}
-
-echo "</pre>\n";
+<?php
+require('../../footer.inc');
 ?>
