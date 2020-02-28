@@ -3,7 +3,10 @@
     --mainblack: #1A1A1A;
 }
 
-html, body {margin: 0; padding: 0; font-family: Helvetica, sans-serif;}
+html, body {
+    margin: 0; padding: 0;
+    font-family: Helvetica, "Helvetica Neue", "Helvetica Neue LT", "Helvetica Now Text", "Segoe UI", sans, sans-serif;
+}
 div {border: #666 1px solid; margin: 0; padding:0px} 
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,11 +82,15 @@ h1, h2, h3, h4, h5, h6 {
 #main {
     padding: 0;
     width: 65%;
-    display: inline-flex;
+    /*display: inline-flex;*/ /* Andy: disabled inline-flex because it was inherited by all the content too */
+    float:left;
 }
 #sidebar {
     padding: 0;
-    width: 24%; display: inline-flex;
+    width: 24%;
+    /*display: inline-flex;*/
+    float:left;
+
 }
 #main, #sidebar {
     min-height: 300px;
@@ -93,4 +100,14 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--mainred);
     height: 100px;
     text-align: center;
+    clear:both;
     }
+
+th, td {
+    padding: 4px 8px;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid grey;
+}
