@@ -1,4 +1,7 @@
 <style>
+	th, td {
+	    padding: 4px 8px;
+	}
 	th {
     text-align: left;
     padding: 6px 4px 6px 0px;
